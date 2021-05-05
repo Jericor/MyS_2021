@@ -8,7 +8,7 @@ a_x = 6*log_x(5*x_1 + 15, 4)- log_x(2*x_1, 2);
 % Grafico de la funcion a
 figure();
 plot(x_1, a_x, 'r *');
-title('a(x) = 6log_4(5x + 15)- log_1(2x)');
+title('a(x) = 6log_4(5x + 15)- log_2(2x)');
 xlabel('x');
 ylabel('a(x)');
 
@@ -27,7 +27,7 @@ plot(x_1, a_x, 'r *', x_1, b_x, 'g +');
 title('Funciones a(x) y b(x)');
 xlabel('x');
 ylabel('y');
-legend({'a(x) = 6log_4(5x + 15)- log_1(2x)','b(x) = sin(6log_{10}(2x+9)) + cos(2ln(x + 16))'},'Location','southeast');
+legend({'a(x) = 6log_4(5x + 15)- log_2(2x)','b(x) = sin(6log_{10}(2x+9)) + cos(2ln(x + 16))'},'Location','southeast');
 
 % Valores de X
 x_2 = -10: .05: 10;
