@@ -17,13 +17,21 @@ H_2 = f_4 + f_5;
 
 % Se define la conexión en serie de la parte inferior del diagrama
 % Con las funciones H_1, H_2 y f_6
-H_low = H_1 * H_2 * f_6;
+H_3 = H_1 * H_2 * f_6;
 
 % Se define la conexión en paralelo final
 % Con las funciones f_1, f_2 y H_low
-H_final = f_1 + f_2 + H_low;
+H_final = f_1 + f_2 + H_3;
 
 % Se grafica la respuesta al escalón del diagrama de bloque
+figure();
 step(H_final);
+title("Respuesta del sistema a un escalón.");
+grid on
 
-
+% La función diverge hacia el infinito 
+% Se analizan los polos para definir la inestabilidad del sistema
+[H_z, H_p, H_k] = zpkdata(H_final);
+H_p{1,1}
+% El decimo polo de la parte real del sistema es positivo
+% Con lo que se concluye que el sistema es inestable
