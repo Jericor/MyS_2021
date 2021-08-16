@@ -1,17 +1,20 @@
 %definimos nuestra distribución uniforme
-function[y] = uniform(x)
+function[F] = uniform(x, a, b)
+pdf = random('Uniform', a,b); %Se adquiere valor de la distribución uniforme
 antecesor = min(x);
-y = [];
+F = [];
+cdf = 0;
 for X = x
     
     if X - antecesor ~= 0
-    result = 1/(X-antecesor);
-    y = [y round(result, 5)];
+    cdf = cdf +pdf;
+    F = [F cdf];
     end
     
     antecesor = X;
-  
+    pdf = random('Uniform', a,b);
 end
-result = 1/(max(x)-antecesor);
-y = [y round(result, 5)];
+pdf = random('Uniform', a,b);
+cdf = cdf +pdf;
+F = [F cdf]; %Se retorna arreglo con cdf
 end

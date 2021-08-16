@@ -23,15 +23,15 @@
 function[x, F] = mycdf(distname, a, b, mean, sigma)
 
 if distname == 'U'
-    x = linspace(a,b,500);
-    F = uniform(x);
+    x = linspace(a,b,500); %Se discretizan 500 muestras 
+    F = uniform(x,a,b); %Se llama a la distribución uniforme cdf
+    plot(x,F)
     
 elseif distname == 'N'
     
-    x = linspace(a,b,500);
-    mean = rand;
-    sigma = rand;
-    F = normal(x,mean,sigma);
+    x = linspace(a,b,500); %Se discretizan 500 muestras 
+    F = normal(x); %Se llama a la distribución uniforme cdf
+    plot(x,F)
 else
     disp('Mal escrito')
 end

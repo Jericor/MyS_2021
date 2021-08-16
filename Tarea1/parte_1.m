@@ -10,10 +10,10 @@ prompt = 'Ingrese el valor mínimo (a) ';
 a = input(prompt);
 prompt = 'Ingrese el valor máximo (b) ';
 b = input(prompt);
-[x, F] = mycdf(str, a, b, 0, 1);
-plot(x,F)
 
-
-%Segunda parte
+%Se llama a la función mycdf
+%Internamente al elegir el tipo de distribución, asigna la media y sigma
+%correspondiente, así que no importa que se ingrese por parámetro.
+[x, F] = mycdf(str, a, b, 0, 0);
 
 
