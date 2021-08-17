@@ -9,26 +9,22 @@
 % (a) Utilize la función conv() de Matlab para realizar la convolución de dos vectores.
 % (b) Use opción ’full’ en conv()
 % DIINF-USACH/10-08-2021 Prof: Fernando R. Rannou 1
-% (c) Para calcular la convolución de n v.a., implemente su función como una convolución
-% entre la función uniforme en [a, b] y el resultado de la convolución de la convolución n−1
-% (d) Note que el intervalo va creciendo cada vez que se aplica convolución ’full’
-% (e) Para n = 2, 8, 16, 32, plotee su aproximación, y la distribución normal a la que se aproxima.
-
+% (c) Para calcular la convolución de n v.a., implemente su funci´on como una convoluci´on
+% entre la funci´on uniforme en [a, b] y el resultado de la convoluci´on de la convoluci´on n−1
+% (d) Note que el intervalo va creciendo cada vez que se aplica convoluci´on ’full’
+% (e) Para n = 2, 8, 16, 32, plotee su aproximaci´on, y la distribuci´on normal a la que se aproxima.
 
 function [f, c, d] = sumuniforme(n, a, b)
 
-% Se crean los subintervalos
 x = linspace(a,b,100);
-% Se crea la distribución uniforme
 pdff = pdf('Uniform',x,a,b);
 
-% Se calculan las convoluciones entre n-1 y n
 acum = pdff;
 for i = 2:n
     acum = conv(acum, pdff, 'full').*0.01;
+    %acum = [acum 0];
 end
 
-% Se definen los nuevos intervalos de la funcion
 c = a;
 d = length(acum)*0.01;
 f = acum;

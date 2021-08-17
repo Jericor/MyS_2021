@@ -16,8 +16,7 @@ prompt = 'Ingrese el valor de la desviación: ';
 sigma = input(prompt);
 
 %Se llama a la función mycdf
-%Internamente al elegir el tipo de distribución, asigna la media y sigma
-%correspondiente, así que no importa que se ingrese por parámetro.
+%Internamente al elegir el tipo de distribución
 [x, F] = mycdf(str, a, b, mean, sigma);
 
 
