@@ -3,12 +3,17 @@
 %function [f, c, d] = sumuniforme(n, a, b)
 n = 2;
 a = 0;
-b = 1;
+b = 10;
 
-pdf = 1/(b-a);
+x = linspace(a,b,100);
+pdff = pdf('Uniform',x,a,b);
 
-acum = pdf;
+acum = pdff;
 for i = 2:n
-    acum = conv(acum, pdf, 'full');
+    acum = conv(acum, pdff, 'full');
+    acum = [acum 0];
 end
+x = linspace(a,b,length(acum));
+
+plot(x,acum)
 
