@@ -1,20 +1,19 @@
 %definimos nuestra distribución uniforme
-function[F] = uniform(x, a, b)
-pdf = random('Uniform', a,b); %Se adquiere valor de la distribución uniforme
-antecesor = min(x);
+function[x, F] = uniform(a, b)
+
+% Se crean 100 puntos por cada unidad del intervalo
+sample = (b-a) * 100;
+x = linspace(a,b,sample);
+
+% Se crea la pdf de la distribución uniforme
+pdf = repelem((1 / (b - a)), sample);
+
+% Se aproxima la cdf de la distribución uniforme
 F = [];
-cdf = 0;
-for X = x
-    
-    if X - antecesor ~= 0
-    cdf = cdf +pdf;
-    F = [F cdf];
-    end
-    
-    antecesor = X;
-    pdf = random('Uniform', a,b);
+value = 0;
+for i = 1:sample
+    value = value + pdf(i)*0.01;
+    F = [F value];
 end
-pdf = random('Uniform', a,b);
-cdf = cdf +pdf;
-F = [F cdf]; %Se retorna arreglo con cdf
+
 end

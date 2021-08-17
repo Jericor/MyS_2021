@@ -18,31 +18,30 @@ vac_normal = sort(vac_normal);
 probs = (1 / (sigma * sqrt(2 * pi))) * exp((-1/2) * ((vac_normal - mean) / sigma).^2); 
 
 % Se definen los parámetros para la pdf
-pdf = [0];
+pdf = [];
 value = a + 0.001;
 frequency = 0;
 i = 1;
-% Mientras se encuentre dentro del intervalo
+
+% Pequeño cambio, se deja solo una probabilidad
+% En lugar de sumarlas
 while value < b
     % Si ya se revisaron todas las vac se rellena con 0
     if i == sample + 1
         pdf = [pdf frequency];
         value = value + 0.001;
         frequency = 0;
-    
     % Si quedan vac
     else
         % Si la vac es menor al valor actual (la vac está dentro del subintervalo)
         if vac_normal(i) < value
-            % Se añade la probabilidad a su frecuencia
-            frequency = frequency + probs(i);
+            frequency = probs(i); 
             i= i + 1;
         % Si la vac es mayor que el valor actual
         else
             % Se añade la frecuencia a la pdf y se restaura a 0
             pdf = [pdf frequency];
             value = value + 0.001;
-            frequency = 0;
         end
     end
 end
@@ -54,7 +53,7 @@ for i = 1:sample
     % El valor de la pdf se multiplica por 0.0005 en lugar de 0.001
     % Con el objetivo de amortiguar el efecto de frecuencias
     % Que se disparan en el eje Y
-    acum = acum + pdf(i)*0.0005;
+    acum = acum + pdf(i)*0.001;
     F = [F acum];
 end
 
