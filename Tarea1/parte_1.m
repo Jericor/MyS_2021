@@ -1,3 +1,7 @@
+%Tarea 1 - Modelación y Simulación - 1 -2021
+
+%Integrantes: Juan Arredondo - Flavio Ramos
+
 %Main
 %Primera parte
 disp('Bienvenido a Tarea1 Modelación y Simulación');

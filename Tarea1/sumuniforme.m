@@ -1,3 +1,7 @@
+%Tarea 1 - Modelación y Simulación - 1 -2021
+
+%Integrantes: Juan Arredondo - Flavio Ramos
+
 % 3. (2.0) Sobre el Teorema del Límite Central: Este teorema dice que la distribución de la
 % suma de muchas (infinitas) v.a.c con una distribución f(x) se aproxima a una distribución
 % normal. Esto lo podemos visualizar aproximando la pdf con un vector discreto con alta

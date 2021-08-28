@@ -1,3 +1,7 @@
+%Tarea 1 - Modelación y Simulación - 1 -2021
+
+%Integrantes: Juan Arredondo - Flavio Ramos
+
 % Parte 3 
 % Main
 

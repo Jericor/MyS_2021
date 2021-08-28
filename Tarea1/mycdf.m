@@ -1,4 +1,6 @@
-%Tarea 1 - Modelación y Simulación - 1 - 2021
+%Tarea 1 - Modelación y Simulación - 1 -2021
+
+%Integrantes: Juan Arredondo - Flavio Ramos
 
 %) Simulando la CDF: Hemos visto en clases que la cdf de una v.a.c es FX(x) = P(X ≤
 %x), pero en el caso de la distribución normal, la cdf no tiene una expresión cerrada. Luego,

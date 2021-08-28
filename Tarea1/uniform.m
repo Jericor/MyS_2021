@@ -1,3 +1,7 @@
+%Tarea 1 - Modelación y Simulación - 1 -2021
+
+%Integrantes: Juan Arredondo - Flavio Ramos
+
 %definimos nuestra distribución uniforme
 function[x, F] = uniform(a, b)
 
